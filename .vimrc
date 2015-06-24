@@ -57,13 +57,19 @@ nnoremap <leader>w <C-w>v<C-w>l
     " Linebreak at 80 chars
 nnoremap <leader><CR> 080lF r<CR>
 
+    " Paste stuff
+nnoremap <leader>p viwp
+nnoremap <leader>P viWp
+nnoremap <leader>0p viw0p
+nnoremap <leader>0P viW0p
+nnoremap <leader>"+p viw"+p
+nnoremap <leader>"+P viW"+p
+
 " Some additional key-mappings
 nnoremap ; :
 
 inoremap jk <ESC>
 inoremap <ESC> <nop>
-vnoremap jk <ESC>
-vnoremap <ESC> <nop>
 
 " Special file mappings
     " c
@@ -95,14 +101,14 @@ set list
 set listchars=tab:▸\ ,eol:$
 
 " Disable arrow-keys
-nnoremap <up> <nop>
-nnoremap <down> <nop>
-nnoremap <left> <nop>
-nnoremap <right> <nop>
-inoremap <up> <nop>
-inoremap <down> <nop>
-inoremap <left> <nop>
-inoremap <right> <nop>
+"nnoremap <up> <nop>
+"nnoremap <down> <nop>
+"nnoremap <left> <nop>
+"nnoremap <right> <nop>
+"inoremap <up> <nop>
+"inoremap <down> <nop>
+"inoremap <left> <nop>
+"inoremap <right> <nop>
 nnoremap j gj
 nnoremap k gk
 
