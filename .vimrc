@@ -1,8 +1,37 @@
-filetype off
-call pathogen#infect()
-filetype plugin indent on
-
 set nocompatible " gets rid of all the crap that Vim does to be vi compatible
+filetype off
+
+" Vundle
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+Plugin 'gmarik/Vundle.vim' " vundle
+Plugin 'mileszs/ack.vim' " Ack plugin
+Plugin 'vim-scripts/a.vim' " switch between header & source file
+Plugin 'sjl/gundo.vim' " undo tree
+Plugin 'vim-scripts/hexman.vim' " Hexeditor with xxd
+Plugin 'vim-scripts/matchit.zip' " extended % matching for Latex & HTML
+Plugin 'scrooloose/nerdcommenter' " Comment shortcuts
+Plugin 'scrooloose/nerdtree' " File browser
+Plugin 'mhinz/vim-rfc' " rfc querieing
+Plugin 'vim-scripts/rfc-syntax' " rfc syntax highlight
+"Plugin 'vim-scripts/ShowMarks' " Zeigt Markierungen an
+Plugin 'msanders/snipmate.vim' " 
+Plugin 'tristen/vim-sparkup' " Easily write HTML
+Plugin 'taglist.vim' " Source Code browser
+Plugin 'easymotion/vim-easymotion' " Move faster
+Plugin 'tpope/vim-repeat' " enable repeating supported plugin maps with .
+Plugin 'tpope/vim-surround' " 
+Plugin 'vim-scripts/YankRing.vim' " 
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'xolox/vim-easytags' " Automaticaly create tag files
+Plugin 'xolox/vim-misc' " Additional Plugin needed
+Plugin 'bronson/vim-trailing-whitespace' " Highlightes trailing whitespaces
+Plugin 'embear/vim-localvimrc'
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on
 
 set modelines=0 " prevents some security exploits
 
@@ -33,11 +62,11 @@ set undofile
 " Define include path
 let &path.="src/include,/usr/include/AL,"
 
+" Make path
+set makeprg=make\ -C\ ../build
+
 " Change . to / in include path (for Java)
 set includeexpr=substitute(v:fname,'\\.','/','g')
-
-" Fix make
-set makeprg=make\ -C\ ../Debug\ -j9
 
 " Change leader-key
 let mapleader = ","
@@ -48,28 +77,27 @@ nnoremap <leader>m :make!<cr>
     " Disable search highlight
 nnoremap <leader>n :nohls<cr>
     " Quick-edit vimrc
-nnoremap <leader>ev :vsplit $MYVIMRC<cr>36gg
+nnoremap <leader>ev :vsplit $MYVIMRC<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr>
 
     " Quickly split window
-nnoremap <leader>w <C-w>v<C-w>l
+nnoremap <leader>w :vnew<CR>
 
     " Linebreak at 80 chars
 nnoremap <leader><CR> 080lF r<CR>
 
     " Paste stuff
-nnoremap <leader>p viwp
-nnoremap <leader>P viWp
-nnoremap <leader>0p viw0p
-nnoremap <leader>0P viW0p
-nnoremap <leader>"+p viw"+p
-nnoremap <leader>"+P viW"+p
+nmap <leader> cp :set opfunc=ChangePaste<CR>g@
+function! ChangePaste(type, ...)
+    silent exe "normal! `[v`]\"_c"
+    silent exe "normal! p"
+endfunction
+
 
 " Some additional key-mappings
 nnoremap ; :
 
 inoremap jk <ESC>
-inoremap <ESC> <nop>
 
 " Special file mappings
     " c
@@ -78,11 +106,8 @@ inoremap <buffer> "" ""<ESC>i
 inoremap <buffer> '' ''<ESC>i
 
 " Searching / Moving
-nnoremap / /\v
-vnoremap / /\v
 set ignorecase
 set smartcase
-set gdefault " Search & replace in the whole line. For the other thing append g
 set incsearch " Highlight search results while typing
 set showmatch
 set hlsearch
@@ -118,3 +143,9 @@ au FocusLost * :wa
 " Syntax
 syntax enable
 colorscheme louver
+
+" Debugging
+let g:pyclewn_args="--gdb=async --window=top --maxlines=10000 --background=Cyan,Green,Magenta"
+let pyclewn_file_cmd=""
+nnoremap <leader>gdb :Pyclewn<CR>:Cmapkeys<CR>:Cinferiortty<CR>:execute pyclewn_file_cmd<CR>
+nnoremap <leader>egdb :Cexitclewn<CR>:Cunmapkeys<CR>
