@@ -5,7 +5,7 @@ filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
-Plugin 'gmarik/Vundle.vim' " vundle
+Plugin 'VundleVim/Vundle.vim' " vundle
 Plugin 'mileszs/ack.vim' " Ack plugin
 Plugin 'vim-scripts/a.vim' " switch between header & source file
 Plugin 'sjl/gundo.vim' " undo tree
@@ -28,6 +28,7 @@ Plugin 'xolox/vim-easytags' " Automaticaly create tag files
 Plugin 'xolox/vim-misc' " Additional Plugin needed
 Plugin 'bronson/vim-trailing-whitespace' " Highlightes trailing whitespaces
 Plugin 'embear/vim-localvimrc'
+Plugin 'junegunn/vim-easy-align'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -149,3 +150,9 @@ let g:pyclewn_args="--gdb=async --window=top --maxlines=10000 --background=Cyan,
 let pyclewn_file_cmd=""
 nnoremap <leader>gdb :Pyclewn<CR>:Cmapkeys<CR>:Cinferiortty<CR>:execute pyclewn_file_cmd<CR>
 nnoremap <leader>egdb :Cexitclewn<CR>:Cunmapkeys<CR>
+
+" easy-align
+    " start interactive EasyAlign in visual mode (e. g. vipga)
+xmap ga <Plug>(EasyAlign)
+    " start interactive EasyAlign for a motion/text object (e. g. gaip)
+nmap ga <Plug>(EasyAlign)
