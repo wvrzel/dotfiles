@@ -18,7 +18,7 @@ Plugin 'vim-scripts/rfc-syntax' " rfc syntax highlight
 "Plugin 'vim-scripts/ShowMarks' " Zeigt Markierungen an
 Plugin 'msanders/snipmate.vim' " 
 Plugin 'tristen/vim-sparkup' " Easily write HTML
-Plugin 'taglist.vim' " Source Code browser
+Plugin 'majutsushi/tagbar' " Source Code browser
 Plugin 'easymotion/vim-easymotion' " Move faster
 Plugin 'tpope/vim-repeat' " enable repeating supported plugin maps with .
 Plugin 'tpope/vim-surround' " 
@@ -96,8 +96,6 @@ endfunction
 
 
 " Some additional key-mappings
-nnoremap ; :
-
 inoremap jk <ESC>
 
 " Special file mappings
@@ -115,6 +113,9 @@ set hlsearch
 nnoremap <leader><space> :noh<cr>
 nnoremap <tab> %
 vnoremap <tab> %
+
+nnoremap gU ?\%<C-R>=virtcol(".")<CR>v\S<CR>
+nnoremap gD /\%<C-R>=virtcol(".")<CR>v\S<CR>
 
 " Handle long lines
 set wrap
