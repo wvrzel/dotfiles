@@ -177,6 +177,8 @@ echo "\nYour prompt, sir:"
 alias fucking=sudo
 alias fuck=su
 
+alias rm='rm -rf'
+
 # The following lines were added by compinstall
 
 zstyle ':completion:*' completer _expand _complete _ignored _correct _approximate
