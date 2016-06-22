@@ -5,7 +5,7 @@ filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
-Plugin 'gmarik/Vundle.vim' " vundle
+Plugin 'VundleVim/Vundle.vim' " vundle
 Plugin 'mileszs/ack.vim' " Ack plugin
 Plugin 'vim-scripts/a.vim' " switch between header & source file
 Plugin 'sjl/gundo.vim' " undo tree
@@ -18,7 +18,7 @@ Plugin 'vim-scripts/rfc-syntax' " rfc syntax highlight
 "Plugin 'vim-scripts/ShowMarks' " Zeigt Markierungen an
 Plugin 'msanders/snipmate.vim' " 
 Plugin 'tristen/vim-sparkup' " Easily write HTML
-Plugin 'taglist.vim' " Source Code browser
+Plugin 'majutsushi/tagbar' " Source Code browser
 Plugin 'easymotion/vim-easymotion' " Move faster
 Plugin 'tpope/vim-repeat' " enable repeating supported plugin maps with .
 Plugin 'tpope/vim-surround' " 
@@ -29,6 +29,7 @@ Plugin 'xolox/vim-misc' " Additional Plugin needed
 Plugin 'bronson/vim-trailing-whitespace' " Highlightes trailing whitespaces
 Plugin 'embear/vim-localvimrc'
 Plugin 'aperezdc/vim-template' " Templates
+Plugin 'junegunn/vim-easy-align'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -96,8 +97,6 @@ endfunction
 
 
 " Some additional key-mappings
-nnoremap ; :
-
 inoremap jk <ESC>
 
 " Special file mappings
@@ -115,6 +114,9 @@ set hlsearch
 nnoremap <leader><space> :noh<cr>
 nnoremap <tab> %
 vnoremap <tab> %
+
+nnoremap gU ?\%<C-R>=virtcol(".")<CR>v\S<CR>
+nnoremap gD /\%<C-R>=virtcol(".")<CR>v\S<CR>
 
 " Handle long lines
 set wrap
@@ -152,3 +154,9 @@ nnoremap <leader>gdb :Pyclewn gdb<CR>:Cmapkeys<CR>:Cinferiortty<CR>:execute pycl
 nnoremap <leader>pdb :Pyclewn pdb %:p<CR>:Cmapkeys<CR>:Cinferiortty<CR>:execute pyclewn_file_cmd<CR>
 nnoremap <leader>egdb :Cexitclewn<CR>:Cunmapkeys<CR>
 nnoremap <leader>epdb :Cexitclewn<CR>:Cunmapkeys<CR>
+
+" easy-align
+    " start interactive EasyAlign in visual mode (e. g. vipga)
+xmap ga <Plug>(EasyAlign)
+    " start interactive EasyAlign for a motion/text object (e. g. gaip)
+nmap ga <Plug>(EasyAlign)
