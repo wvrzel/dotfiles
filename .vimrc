@@ -28,6 +28,7 @@ Plugin 'xolox/vim-easytags' " Automaticaly create tag files
 Plugin 'xolox/vim-misc' " Additional Plugin needed
 Plugin 'bronson/vim-trailing-whitespace' " Highlightes trailing whitespaces
 Plugin 'embear/vim-localvimrc'
+Plugin 'aperezdc/vim-template' " Templates
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -147,5 +148,7 @@ colorscheme louver
 " Debugging
 let g:pyclewn_args="--gdb=async --window=top --maxlines=10000 --background=Cyan,Green,Magenta"
 let pyclewn_file_cmd=""
-nnoremap <leader>gdb :Pyclewn<CR>:Cmapkeys<CR>:Cinferiortty<CR>:execute pyclewn_file_cmd<CR>
+nnoremap <leader>gdb :Pyclewn gdb<CR>:Cmapkeys<CR>:Cinferiortty<CR>:execute pyclewn_file_cmd<CR>
+nnoremap <leader>pdb :Pyclewn pdb %:p<CR>:Cmapkeys<CR>:Cinferiortty<CR>:execute pyclewn_file_cmd<CR>
 nnoremap <leader>egdb :Cexitclewn<CR>:Cunmapkeys<CR>
+nnoremap <leader>epdb :Cexitclewn<CR>:Cunmapkeys<CR>
