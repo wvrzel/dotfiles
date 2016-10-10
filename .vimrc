@@ -30,6 +30,10 @@ Plugin 'bronson/vim-trailing-whitespace' " Highlightes trailing whitespaces
 Plugin 'embear/vim-localvimrc'
 Plugin 'aperezdc/vim-template' " Templates
 Plugin 'junegunn/vim-easy-align'
+Plugin 'tpope/vim-obsession' " For tmux ressurect
+Plugin 'tmux-plugins/vim-tmux-focus-events' " restore focus events in tmux
+Plugin 'christoomey/vim-tmux-navigator' " you know what it is
+Plugin 'epeli/slimux' " send lines of code to tmux panes
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -160,3 +164,27 @@ nnoremap <leader>epdb :Cexitclewn<CR>:Cunmapkeys<CR>
 xmap ga <Plug>(EasyAlign)
     " start interactive EasyAlign for a motion/text object (e. g. gaip)
 nmap ga <Plug>(EasyAlign)
+
+" Switch between the last two files
+nnoremap <leader><leader> <c-^>
+
+" Get off my lawn
+nnoremap <Left> :echoe "Use h"<CR>
+nnoremap <Right> :echoe "Use l"<CR>
+nnoremap <Up> :echoe "Use k"<CR>
+nnoremap <Down> :echoe "Use j"<CR>
+
+" Open new split panes to right and bottom, which feels more natural
+set splitbelow
+set splitright
+
+" Autocomplete with dictionary words when spell check is on
+set complete+=kspell
+
+" Always use vertical diffs
+set diffopt+=vertical
+
+nnoremap <Leader>s :SlimuxREPLSendLine<CR>
+vnoremap <Leader>s :SlimuxREPLSendSelection<CR>
+nnoremap <Leader>a :SlimuxShellLast<CR>
+nnoremap <Leader>k :SlimuxSendKeysLast<CR>

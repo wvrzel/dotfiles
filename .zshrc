@@ -179,6 +179,32 @@ alias fuck=su
 
 alias rm='rm -rf'
 
+youtube-dl() {
+    if [[ $1 == "mp3" ]]
+    then
+        shift
+        echo "youtube-dl -x --audio-format mp3 $@"
+        command youtube-dl -x --audio-format mp3 $@
+    else
+        command youtube-dl $@
+    fi
+}
+
+.() { nautilus . 2> /dev/null }
+
+update() {
+    sudo apt-get update
+    sudo apt-get upgrade -y
+    sudo apt-get dist-upgrade -y
+    sudo apt autoremove -y
+    sudo apt-get autoclean
+    sudo update-flashplugin-nonfree --install
+    sudo update-flashplugin-nonfree --install
+    sudo youtube-dl -U
+}
+
+
+
 # The following lines were added by compinstall
 
 zstyle ':completion:*' completer _expand _complete _ignored _correct _approximate

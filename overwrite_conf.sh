@@ -9,6 +9,8 @@ mv .gitconfig .gitconfig.original; ln -fs dotfiles/.gitconfig .gitconfig
 mv .gitignore .gitignore.original; ln -fs dotfiles/.gitignore .gitignore
 mv .gitignore .gitignore.original; ln -fs dotfiles/.gitignore .gitignore
 mv .taskrc .taskrc.original; ln -fs dotfiles/.taskrc .taskrc
+mv .tmux.conf .tmux.conf.original; ln -fs dotfiles/.tmux.conf .tmux.conf
+mv .tmux .tmux.original; ln -fs dotfiles/.tmux .tmux
 mv .vim .vim.original; ln -fs dotfiles/.vim .vim
 mv .vimrc .vimrc.original; ln -fs dotfiles/.vimrc .vimrc
 mv .zshrc .zshrc.original; ln -fs dotfiles/.zshrc .zshrc
