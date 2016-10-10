@@ -22,6 +22,21 @@ then
     esac
 fi
 
+# Install tmux?
+s=$(which tmux)
+if [ ${#s} -eq 0 ]
+then
+    read -r -p "tmux installieren? [Y/n] " response
+    case $response in
+        [nN][oO]|[nN]) 
+            ;;
+        *)
+            if [ $updated_apt_cache -eq 0 ]; then sudo apt-get update && updated_apt_cache=1; fi
+            sudo apt-get install -y tmux
+            ;;
+    esac
+fi
+
 # Backup & link files
 timestamp=$(date +%s)
 for f in .bashrc .bash_aliases .gitconfig .gitignore .gitignore .taskrc .tmux .tmux.conf .vim .vimrc .zshrc
