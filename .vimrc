@@ -34,6 +34,9 @@ Plugin 'tpope/vim-obsession' " For tmux ressurect
 Plugin 'tmux-plugins/vim-tmux-focus-events' " restore focus events in tmux
 Plugin 'christoomey/vim-tmux-navigator' " you know what it is
 Plugin 'epeli/slimux' " send lines of code to tmux panes
+Plugin 'chrisbra/Recover.vim' " swap file diff recovery
+Plugin 'tpope/vim-fugitive' " Git
+Plugin 'Chiel92/vim-autoformat' " beautifier
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -125,7 +128,7 @@ nnoremap gD /\%<C-R>=virtcol(".")<CR>v\S<CR>
 " Handle long lines
 set wrap
 set textwidth=79
-set formatoptions=qrn1
+set formatoptions=tcqn1r
 set colorcolumn=80
 
 " Invisible chars
@@ -188,3 +191,9 @@ nnoremap <Leader>s :SlimuxREPLSendLine<CR>
 vnoremap <Leader>s :SlimuxREPLSendSelection<CR>
 nnoremap <Leader>a :SlimuxShellLast<CR>
 nnoremap <Leader>k :SlimuxSendKeysLast<CR>
+
+" local vimrc persistent
+let g:localvimrc_persistent=2
+
+" latex abbrev
+inoremap \align \begin{align*}<CR><BS>\end{align*}<ESC>O

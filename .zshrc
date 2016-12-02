@@ -190,6 +190,10 @@ youtube-dl() {
     fi
 }
 
+aria2c() {
+    aria2c -c -x 16 -s 16 $@
+}
+
 .() { nautilus . 2> /dev/null }
 
 update() {
@@ -203,6 +207,8 @@ update() {
     sudo youtube-dl -U
 }
 
+
+synclient TapButton1=1 TapButton2=3
 
 
 # The following lines were added by compinstall
