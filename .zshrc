@@ -210,6 +210,10 @@ update() {
 
 synclient TapButton1=1 TapButton2=3
 
+syslog() {
+    sudo less +F /var/log/syslog
+}
+
 
 # The following lines were added by compinstall
 
