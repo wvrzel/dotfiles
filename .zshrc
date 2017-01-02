@@ -214,6 +214,16 @@ syslog() {
     sudo less +F /var/log/syslog
 }
 
+tmux() {
+    if [[ $# -eq 0 ]]
+    then
+        tmux new-session -s $(id -u) -d
+        tmux kill-session -t $(id -u)
+    else
+        tmux $@
+    fi
+}
+
 
 # The following lines were added by compinstall
 
