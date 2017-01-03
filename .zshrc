@@ -208,8 +208,6 @@ update() {
 }
 
 
-synclient TapButton1=1 TapButton2=3
-
 syslog() {
     sudo less +F /var/log/syslog
 }
@@ -217,10 +215,11 @@ syslog() {
 tmux() {
     if [[ $# -eq 0 ]]
     then
-        tmux new-session -s $(id -u) -d
-        tmux kill-session -t $(id -u)
+        /usr/bin/tmux new-session -s $(id -u) -d
+        /usr/bin/tmux kill-session -t $(id -u)
+        /usr/bin/tmux attach
     else
-        tmux $@
+        /usr/bin/tmux $@
     fi
 }
 
