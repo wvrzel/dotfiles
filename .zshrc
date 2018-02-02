@@ -144,7 +144,7 @@ then
     export PATH="/usr/local/sbin:/usr/sbin:/sbin:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games"
 else
     export PATH="/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games"
-end
+fi
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
