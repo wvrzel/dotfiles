@@ -67,6 +67,7 @@ grep "[user]" .gitconfig > /dev/null || (
 )
 
 # Install zsh?
+apt install -y fonts-powerline
 s=$(which zsh)
 if [ ${#s} -eq 0 ]
 then

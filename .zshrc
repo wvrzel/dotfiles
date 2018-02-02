@@ -139,8 +139,12 @@ BULLETTRAIN_HG_SHOW=false
 plugins=(battery catimg chucknorris colorize command-not-found common-aliases copydir copyfile cp emoji-clock extract debian git gitignore jsontoolsi per-directory-history python rsync sprunge taskwarrior themes vi-mode wd)
 
 # User configuration
-
-  export PATH="/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games"
+if [[ "$(id -u)" -eq 0 ]]
+then
+    export PATH="/usr/local/sbin:/usr/sbin:/sbin:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games"
+else
+    export PATH="/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games"
+end
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
