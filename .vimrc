@@ -33,7 +33,7 @@ Plugin 'easymotion/vim-easymotion' " Move faster
 " Plugin 'tpope/vim-repeat' " enable repeating supported plugin maps with . <--- why should I want this?
 Plugin 'tpope/vim-surround'
 Plugin 'vim-scripts/YankRing.vim' "
-" Plugin 'Valloric/YouCompleteMe'
+Plugin 'Valloric/YouCompleteMe'
 Plugin 'xolox/vim-easytags' " Automaticaly create tag files
 Plugin 'xolox/vim-misc'     " Additional Plugin needed
 Plugin 'bronson/vim-trailing-whitespace' " Highlightes trailing whitespaces
