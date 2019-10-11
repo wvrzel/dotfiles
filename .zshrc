@@ -8,6 +8,16 @@ export ZSH=~/.oh-my-zsh
 ZSH_THEME="bullet-train"
 
 # --------------------- bullet train config ---------------------------
+BULLETTRAIN_PROMPT_ORDER=(
+    time
+    context
+    dir
+    virtualenv
+    perl
+    git
+    status
+    cmd_exec_time
+)
 # Prompt
 #BULLETTRAIN_PROMPT_CHAR=\$  # Character to be show before any command
 #BULLETTRAIN_PROMPT_ROOT=true  # Highlight if running as root
@@ -15,14 +25,12 @@ ZSH_THEME="bullet-train"
 #BULLETTRAIN_PROMPT_ADD_NEWLINE=true  # Adds a newline character before each prompt line
 
 # Status
-#BULLETTRAIN_STATUS_SHOW=true  # Show/hide that segment
-#BULLETTRAIN_STATUS_EXIT_SHOW=false  # Show/hide exit code of last command
+BULLETTRAIN_STATUS_EXIT_SHOW=true  # Show/hide exit code of last command
 #BULLETTRAIN_STATUS_BG=green  # Background color
 #BULLETTRAIN_STATUS_ERROR_BG=red  # Background color of segment when last command exited with an error
 #BULLETTRAIN_STATUS_FG=black  # Foreground color
 
 # Time
-#BULLETTRAIN_TIME_SHOW=true  # Show/hide that segment
 #BULLETTRAIN_TIME_12HR=false  # Format time using 12-hour clock (am/pm)
 #BULLETTRAIN_TIME_BG=''  # Background color
 #BULLETTRAIN_TIME_FG=''  # Foreground color
@@ -33,45 +41,38 @@ ZSH_THEME="bullet-train"
 #BULLETTRAIN_CUSTOM_FG=black  # Foreground color
 
 # Context
-#BULLETTRAIN_CONTEXT_SHOW=false  # Show/hide that segment
 #BULLETTRAIN_CONTEXT_BG=black  # Background color
 #BULLETTRAIN_CONTEXT_FG=default  # Foreground color
 #BULLETTRAIN_CONTEXT_DEFAULT_USER=none  # Default user. If you are running with other user other than default, the segment will be showed.
 #BULLETTRAIN_IS_SSH_CLIENT=none  # If true, the segment will be showed.
 
 # Python virtualenv (+Pyenv)
-BULLETTRAIN_VIRTUALENV_SHOW=false  # Show/hide that segment
 #BULLETTRAIN_VIRTUALENV_BG=yellow  # Background color
 #BULLETTRAIN_VIRTUALENV_FG=white  # Foreground color
 #BULLETTRAIN_VIRTUALENV_PREFIX=🐍  # Prefix of the segment
 
 # node.js nvm
-BULLETTRAIN_NVM_SHOW=false  # Show/hide that segment
 #BULLETTRAIN_NVM_BG=green  # Background color
 #BULLETTRAIN_NVM_FG=white  # Foreground color
 #BULLETTRAIN_NVM_PREFIX="⬡ "  # Prefix of the segment
 
 # Ruby RVM/Rbenv
-BULLETTRAIN_RUBY_SHOW=false  # Show/hide that segment
 #BULLETTRAIN_RUBY_BG=magenta  # Background color
 #BULLETTRAIN_RUBY_FG=white  # Foreground color
 #BULLETTRAIN_RUBY_PREFIX="♦"  # Prefix of the segment
 
 # Go
-#BULLETTRAIN_GO_SHOW=false  # Show/hide that segment
 #BULLETTRAIN_GO_BG=green  # Background color
 #BULLETTRAIN_GO_FG=white  # Foreground color
 #BULLETTRAIN_GO_PREFIX=go  # Prefix of the segment
 
 # Dir
-#BULLETTRAIN_DIR_SHOW=true  # Show/hide that segment
 #BULLETTRAIN_DIR_BG=blue  # Background color
 #BULLETTRAIN_DIR_FG=white  # Foreground color
 #BULLETTRAIN_DIR_CONTEXT_SHOW=false  # Show user and machine in an SCP formatted style
 #BULLETTRAIN_DIR_EXTENDED=1  # Extended path (0=short path, 1=medium path, 2=complete path, everything else=medium path)
 
 # Git
-#BULLETTRAIN_GIT_SHOW=true  # Show/hide that segment
 #BULLETTRAIN_GIT_COLORIZE_DIRTY=false  # Set BULLETTRAIN_GIT_BG to BULLETTRAIN_GIT_COLORIZE_DIRTY_COLOR in dirty state
 #BULLETTRAIN_GIT_COLORIZE_DIRTY_COLOR=yellow  # BULLETTRAIN_GIT_BG in dirty state
 #BULLETTRAIN_GIT_BG=white  # Background color
@@ -90,9 +91,6 @@ BULLETTRAIN_RUBY_SHOW=false  # Show/hide that segment
 #BULLETTRAIN_GIT_AHEAD=" ⬆"  # Icon for ahead state from remote
 #BULLETTRAIN_GIT_BEHIND=" ⬇"  # Icon for behind state from remote
 #BULLETTRAIN_GIT_DIVERGED=" ⬍"  # Icon for diverged state from remote
-
-# Mercurial/HG
-BULLETTRAIN_HG_SHOW=false
 # ------------------- bullet train config end ------------------------------
 
 # Uncomment the following line to use case-sensitive completion.
@@ -136,7 +134,7 @@ BULLETTRAIN_HG_SHOW=false
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(battery catimg chucknorris colorize command-not-found common-aliases copydir copyfile cp emoji-clock extract debian git gitignore jsontoolsi per-directory-history python rsync sprunge taskwarrior themes vi-mode wd)
+plugins=(battery catimg chucknorris colorize command-not-found common-aliases copydir copyfile cp emoji-clock extract debian git gitignore per-directory-history python rsync sprunge taskwarrior themes vi-mode wd)
 
 # User configuration
 if [[ "$(id -u)" -eq 0 ]]
