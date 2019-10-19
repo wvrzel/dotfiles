@@ -351,3 +351,6 @@ endfunction
 " Navigate tabs
 nnoremap H gT
 nnoremap L gt
+
+" filetype dependent options
+autocmd FileType html setlocal shiftwidth=2 tabstop=2
