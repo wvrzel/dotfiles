@@ -103,9 +103,9 @@ set updatetime=1000
 
 " Handle long lines
 set wrap
-set textwidth=79
-set formatoptions=tcqn1r
-set colorcolumn=80
+"set textwidth=79
+"set formatoptions=tcqn1r
+"set colorcolumn=80
 
 " Invisible chars
 set list
