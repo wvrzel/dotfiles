@@ -47,7 +47,7 @@ do
         echo $dst,$f
         mv $f $f.$timestamp.backup
     fi
-    ln -fs dotfiles/$f $f
+    ln -fs $CONF_SRC/$f $f
 done
 
 # Install Vundle
