@@ -58,16 +58,22 @@ then
     git clone https://github.com/VundleVim/Vundle.vim .vim/bundle/Vundle.vim
 fi
 
-# Config git user
-grep "[user]" .gitconfig > /dev/null || (
+# Git config template
+grep "\[user\]" .gitconfig > /dev/null || (
     echo >> .gitconfig
     echo "[user]" >> .gitconfig
     echo "    name = " >> .gitconfig
     echo "    email = " >> .gitconfig
 )
 
+grep "\[http\]" .gitconfig > /dev/null || (
+    echo >> .gitconfig
+    echo "[http]" >> .gitconfig
+    echo "    proxy = " >> .gitconfig
+)
+
 # Install zsh?
-apt install -y fonts-powerline
+sudo apt install -y fonts-powerline
 s=$(which zsh)
 if [ ${#s} -eq 0 ]
 then
@@ -86,6 +92,9 @@ else
 fi
 
 # Install oh-my-zsh
+sudo apt-get install build-essential cmake
+sudo apt-get install exuberant-ctags
+sudo apt-get install python-dev python3-dev
 if which zsh > /dev/null && [ ! -e .oh-my-zsh ]
 then
     git clone https://github.com/robbyrussell/oh-my-zsh.git .oh-my-zsh
@@ -94,9 +103,8 @@ then
 fi
 
 # Execute vim & update plugins
+vim .gitconfig
 vim +PluginUpdate .gitconfig
-sudo apt-get install build-essential cmake
-sudo apt-get install python-dev python3-dev
 cd ~/.vim/bundle/YouCompleteMe
 ./install.py --clang-completer
 cd ~
