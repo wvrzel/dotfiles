@@ -6,3 +6,6 @@
 .vim/.netrwhist
 .tmux/plugins/*
 .tmux/resurrect/
+__pycache__/
+*.sqlite3
+*.jpg
