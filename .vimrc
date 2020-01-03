@@ -50,6 +50,10 @@ Plugin 'Chiel92/vim-autoformat' " beautifier :Autoformat
 Plugin 'powerman/vim-plugin-AnsiEsc' " color escape sequences
 " Plugin 'vimwiki/vimwiki' " vim wiki
 " Plugin 'tbabej/taskwiki' " vim wiki taskwarrior
+Plugin 'mattn/emmet-vim' " html & css autocompletion
+Plugin 'ap/vim-css-color' " auto color css color codes
+Plugin 'posva/vim-vue' " .vue files plugin
+Plugin 'digitaltoad/vim-pug' " pug/jade html preprocessor helper
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
