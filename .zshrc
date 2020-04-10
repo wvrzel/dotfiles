@@ -134,7 +134,7 @@ BULLETTRAIN_STATUS_EXIT_SHOW=true  # Show/hide exit code of last command
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(battery catimg chucknorris colorize command-not-found common-aliases copydir copyfile cp emoji-clock extract debian git gitignore per-directory-history python rsync sprunge taskwarrior themes vi-mode wd)
+plugins=(battery catimg chucknorris colorize command-not-found common-aliases copydir copyfile cp emoji-clock extract debian git gitignore per-directory-history python rsync sprunge taskwarrior themes vi-mode wd zsh-nvm)
 
 # User configuration
 if [[ "$(id -u)" -eq 0 ]]

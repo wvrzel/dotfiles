@@ -92,14 +92,21 @@ else
 fi
 
 # Install oh-my-zsh
+    # install dependencies
 sudo apt-get install build-essential cmake
 sudo apt-get install exuberant-ctags
 sudo apt-get install python-dev python3-dev
-if which zsh > /dev/null && [ ! -e .oh-my-zsh ]
+if which zsh > /dev/null && [ ! -e .oh-my-zsh ] # install only if zsh is available and if .oh-my-zsh does not exist
 then
     git clone https://github.com/robbyrussell/oh-my-zsh.git .oh-my-zsh
+    # install bullet-train theme
     wget http://raw.github.com/caiogondim/bullet-train-oh-my-zsh-theme/master/bullet-train.zsh-theme
     mv bullet-train.zsh-theme .oh-my-zsh/themes
+    # install zsh-nvm plugin
+    git clone https://github.com/lukechilds/zsh-nvm .oh-my-zsh/custom/plugins/zsh-nvm
+    # change permissions
+    chmod g-w,o-w -R .oh-my-zsh/plugins
+    chmod g-w,o-w -R .oh-my-zsh/custom/plugins
 fi
 
 # Execute vim & update plugins
@@ -119,3 +126,9 @@ uname -a | grep -q Microsoft && {
 
 # Run zsh
 [ $0 != $(which zsh) ] && zsh
+
+echo 'You might want to install nodejs and vue:'
+echo 'nvm upgrade'
+echo 'nvm install -lts --latest-npm'
+echo 'npm install -g yarn'
+echo 'yarn global add vue @vue/cli'
