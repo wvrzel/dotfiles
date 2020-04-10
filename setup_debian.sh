@@ -109,5 +109,13 @@ cd ~/.vim/bundle/YouCompleteMe
 ./install.py --clang-completer
 cd ~
 
+# WSL Powerline fonts
+uname -a | grep -q Microsoft && {
+    echo "You are using this on WSL! Installing Powerline fonts on windows..."
+    git clone https://github.com/powerline/fonts $CONF_SRC/powerline-fonts
+    /mnt/c/Windows/System32/WindowsPowerShell/v1.0/powershell.exe -File 'powerline-fonts\install.ps1'
+    echo "Please change the font of your terminal emulator to 'Meslo LG S for Powerline'"
+}
+
 # Run zsh
 [ $0 != $(which zsh) ] && zsh
