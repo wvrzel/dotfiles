@@ -1,2 +1,8 @@
 [core]
     excludesfile = ~/.gitignore
+[merge]
+    tool = vimdiff
+[mergetool "vimdiff"]
+    trustExitCode = false
+[mergetool]
+    keepBackup = false
